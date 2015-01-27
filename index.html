@@ -1,54 +1,63 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-  <link href="css/normalize.css" media="screen" rel="stylesheet">
+  <!-- <link href="css/normalize.css" media="screen" rel="stylesheet"> -->
   <link href="css/bootstrap.css" media="screen" rel="stylesheet">
-  <link href="css/style.css" media="screen" rel="stylesheet">
+ <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/simple-sidebar.css" rel="stylesheet">
+    <link href="css/style.css" media="screen" rel="stylesheet">
 </head>
 
 <body>
 
   <script type='text/x-handlebars' data-template-name='application'>
-    <div class='navbar navbar-default navbar-fixed-top'>
-      <div class='container'>
-      <ul class='nav navbar-nav'>
-        <li>{{#link-to 'index' class='navbar-brand'}}BinTher{{/link-to}}</li> 
+    <div class='navbar navbar-fixed-top'>
+      <div class='container container-fluid' id='bar'>
+       <ul class='nav navbar-nav'>
+        <li class='navbar-header'>{{#link-to 'index' class='navbar-brand'}}BinTher{{/link-to}}</li> 
         <li>{{#link-to 'countries'}}Countries{{/link-to}}</li>   
         <li>{{#link-to 'about' class='pull-right'}}About{{/link-to}}</li> 
       </ul>
       </div>
     </div>
 
-    <div class= 'container'>
+    <div class='container' id='wrap'>
+   
+
       {{outlet}}
-    </div>
+
 
     <footer class='container'>
     </footer>
   </script>
 
   <script type="text/x-handlebars" data-template-name="index">
-    <h1> Welcome to BinTher</h1>
-    <h3> Ive been to {{countriesCount}} countries that I wrote about :)</h3>
+    <div class='title page-header'>
+    <h1> BinTher - Have You <em>Bin</em> There?</h1>
+    </div>
+    <p>
+    <h4> Ive been to {{countriesCount}} countries that I wrote about :)</h4>
     <img {{bind-attr src='map'}} />
   </script>
 
   <script type="text/x-handlebars" data-template-name="about">
+  <div class='title page-header'>
     <h2>Tell your friends where you have been and discover where to go</h2> 
+    </div>
   </script>
 
   <script type="text/x-handlebars" data-template-name="countries">
   <div class="row">
-    <div class='col-md-3'>
-      <div class='list-group'><!-- //knows what url to create (countries/cambodia) based on 'countries/:name' in router-->
+    <div class='col-sm-3'>
+      <div class='list-group panel sidebar-nav'><!-- //knows what url to create (countries/cambodia) based on 'countries/:name' in router-->
         {{#each}}
           {{#link-to 'country' this classNames='list-group-item'}} 
-            <h4>{{name}}</h4> <!--// abstraction for each country in model, print country.name-->
+            {{name}} <!--// abstraction for each country in model, print country.name-->
           {{/link-to}}
         {{/each}}
       </div>
     </div>
-    <div class='col-md-8 pull-right'>
+    <div class='col-sm-9'>
       {{outlet}}
     </div>
   </div>

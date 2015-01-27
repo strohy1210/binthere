@@ -67,6 +67,17 @@ App.COUNTRIES = [
   name: 'Indonesia',
   continent: 'South East Asia',
   date: 'August 2014'
+},
+
+{
+  name: 'Japan',
+  continent: 'South East Asia',
+  date: 'June 2014'
+},
+{
+  name: 'Australia',
+  continent: 'South East Asia',
+  date: 'New Year 2014-2015'
 }
 
 ];
@@ -83,3 +94,7 @@ AppCountryRoute = Ember.Route.extend({
     return App.PRODUCTS.findBy('name', params.name); //go to '/cmabodia', it will find that name and find the object
   }
 });
+
+App.Product = DS.Model.extend({
+
+})

@@ -32,4 +32,12 @@ body {
 .navbar .container, .navbar {
   background-color: #ddd;
   border-color: transparent;
+  margin-left: 0px;
+  padding-left: 70px;
+}
+
+.navbar-fixed-top {
+  position: fixed;
+  right: 0;
+  left: 0;
 }

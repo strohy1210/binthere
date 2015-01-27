@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <link href="css/normalize.css" media="screen" rel="stylesheet">
+  <link href="css/bootstrap.css" media="screen" rel="stylesheet">
+  <link href="css/style.css" media="screen" rel="stylesheet">
+</head>
+
+<body>
+
+  <script type='text/x-handlebars' data-template-name='application'>
+    <div class='navbar navbar-default navbar-fixed-top'>
+      <div class='container'>
+      <ul class='nav navbar-nav'>
+        <li>{{#link-to 'index' class='navbar-brand'}}BinTher{{/link-to}}</li> 
+        <li>{{#link-to 'countries'}}Countries{{/link-to}}</li>   
+        <li>{{#link-to 'about' class='pull-right'}}About{{/link-to}}</li> 
+      </ul>
+      </div>
+    </div>
+
+    <div class= 'container'>
+      {{outlet}}
+    </div>
+
+    <footer class='container'>
+    </footer>
+  </script>
+
+  <script type="text/x-handlebars" data-template-name="index">
+    <h1> Welcome to BinTher</h1>
+    <h3> Ive been to {{countriesCount}} countries that I wrote about :)</h3>
+    <img {{bind-attr src='map'}} />
+  </script>
+
+  <script type="text/x-handlebars" data-template-name="about">
+    <h2>Tell your friends where you have been and discover where to go</h2> 
+  </script>
+
+  <script type="text/x-handlebars" data-template-name="countries">
+  <div class="row">
+    <div class='col-md-3'>
+      <div class='list-group'><!-- //knows what url to create (countries/cambodia) based on 'countries/:name' in router-->
+        {{#each}}
+          {{#link-to 'country' this classNames='list-group-item'}} 
+            <h4>{{name}}</h4> <!--// abstraction for each country in model, print country.name-->
+          {{/link-to}}
+        {{/each}}
+      </div>
+    </div>
+    <div class='col-md-8 pull-right'>
+      {{outlet}}
+    </div>
+  </div>
+  </script>
+
+ <script type="text/x-handlebars" data-template-name="country">
+    <h3>{{name}}</h3>
+    <h3>{{date}}</h3>
+  </script>
+
+  <script type="text/x-handlebars" data-template-name="countries/index">
+    <h3>Choose a country on the left to see more details</h3> 
+  </script>
+
+
+  <script src="js/libs/jquery-1.10.2.js"></script>
+  <script src="js/libs/handlebars-v2.0.0.js"></script>
+  <script src="js/libs/ember-1.9.1.js"></script>
+  <script src="app.js"></script>
+  <script src="ember-data.js"></script>
+</body>
+</html>

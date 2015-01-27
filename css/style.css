@@ -1,0 +1,35 @@
+
+body { 
+  font-family: 'Karla', sans-serif;
+  font-size: 16px;
+  background: #fafafa;
+  padding-top: 100px;
+
+    -webkit-background-size: 100%;
+    -moz-background-size: 100%;
+    -o-background-size: 100%;
+    background-size: 100%;
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+ }
+
+.container {
+  background-color: #fafafa;
+  border-radius: 20px;
+}
+
+
+.navbar-brand,
+.navbar-nav li a {
+    line-height: 55px;
+    height: 55px;
+    padding-top: 0;
+}
+
+.navbar .container, .navbar {
+  background-color: #ddd;
+  border-color: transparent;
+}

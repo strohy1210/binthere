@@ -23,9 +23,7 @@
 
     <div class='container' id='wrap'>
    
-
       {{outlet}}
-
 
     <footer class='container'>
     </footer>
@@ -36,17 +34,20 @@
     <h1> BinTher - Have You <em>Bin</em> There?</h1>
     </div>
     <p>
-    <h4> Ive been to {{countriesCount}} countries that I wrote about :)</h4>
+    <h4> Ive been to {{countriesCount}} {{#link-to 'countries'}}countries{{/link-to}} that I wrote about :)</h4>
     <img {{bind-attr src='map'}} />
   </script>
 
   <script type="text/x-handlebars" data-template-name="about">
   <div class='title page-header'>
-    <h2>Tell your friends where you have been and discover where to go</h2> 
+    <h2>Tell your friends where youve been and discover where to go</h2> 
     </div>
   </script>
 
   <script type="text/x-handlebars" data-template-name="countries">
+  <div class='title page-header'>
+    <h1>Countries a la Strohberry</h1>
+  </div>
   <div class="row">
     <div class='col-sm-3'>
       <div class='list-group panel sidebar-nav'><!-- //knows what url to create (countries/cambodia) based on 'countries/:name' in router-->
@@ -66,6 +67,7 @@
  <script type="text/x-handlebars" data-template-name="country">
     <h3>{{name}}</h3>
     <h3>{{date}}</h3>
+    <h4>{{cities}}</h4>
   </script>
 
   <script type="text/x-handlebars" data-template-name="countries/index">

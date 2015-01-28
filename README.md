@@ -7,4 +7,4 @@ can do fixture adapter fr hardcoded
 
 all models must have unique id
 
-ember had store for all records, used to send and retrive records
+ember had store for all records, used to send and retrive records# binthere
